@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 3</title>
+</head>
+<body>
+    <button onclick="calculateSum()">Click me</button>
+
+    <script>
+        function calculateSum() {
+            let numbers = [];
+            let sum = 0;
+
+            for (let i = 0; i <= 100; i++) {
+                numbers.push(i);
+                sum += i;
+            }
+
+            console.log("Array:", numbers);
+            console.log("Sum:", sum);
+        }
+    </script>
+</body>
+</html>
