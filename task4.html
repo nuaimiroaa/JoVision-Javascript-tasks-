@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task - Even Numbers Sum</title>
+</head>
+<body>
+    <button onclick="calculateEvenSum()">Click me</button>
+
+    <script>
+        function calculateEvenSum() {
+            let numbers = [];
+            let sum = 0;
+
+            // إنشاء الأعداد من 0 لحد 100
+            for (let i = 0; i <= 100; i++) {
+                numbers.push(i);
+
+                // إذا كان العدد زوجي نجمعه
+                if (i % 2 === 0) {
+                    sum += i;
+                }
+            }
+
+            console.log("Array:", numbers);
+            console.log("Sum of even numbers:", sum);
+        }
+    </script>
+</body>
+</html>
