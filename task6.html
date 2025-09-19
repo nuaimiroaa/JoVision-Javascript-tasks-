@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Methods Tasks</title>
+</head>
+<body>
+
+  <h2>Array Methods Tasks</h2>
+
+  <!-- الأزرار الخمسة -->
+  <button onclick="RemoveDivisibleBy3()">A</button>
+  <button onclick="AddNumbers()">B</button>
+  <button onclick="Adds3ToEachMember()">C</button>
+  <button onclick="Index20To40()">D</button>
+  <button onclick="PrintsTheShuffledArray()">E</button>
+
+  <script>
+    // دالة مساعدة لإنشاء مصفوفة من 0 إلى n
+    function createArray(n) {
+      let arr = [];
+      for (let i = 0; i <= n; i++) {
+        arr.push(i);
+      }
+      return arr;
+    }
+
+    // زر A: حذف الأعداد القابلة للقسمة على 3
+    function RemoveDivisibleBy3() {
+      let numbers = createArray(100);
+      let filtered = numbers.filter(num => num % 3 !== 0);
+      console.log("Button A result:", filtered);
+    }
+
+    // زر B: إضافة الأعداد من 100 إلى 150
+    function AddNumbers() {
+      let numbers = createArray(100);
+      for (let i = 100; i <= 150; i++) {
+        numbers.push(i);
+      }
+      console.log("Button B result:", numbers);
+    }
+
+    // زر C: إضافة 3 لكل عنصر
+    function Adds3ToEachMember() {
+      let numbers = createArray(100);
+      let modified = numbers.map(num => num + 3);
+      console.log("Button C result:", modified);
+    }
+
+    // زر D: طباعة الأعداد من index 20 إلى 40
+    function Index20To40() {
+      let numbers = createArray(100);
+      let sliced = numbers.slice(20, 41); // 41 حتى يشمل index 40
+      console.log("Button D result:", sliced);
+    }
+
+    // دالة shuffle (من ال hints)
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    // زر E: Shuffle ثم sort
+    function PrintsTheShuffledArray() {
+      let numbers = createArray(100);
+      shuffleArray(numbers);
+      console.log("Button E shuffled:", numbers);
+      numbers.sort((a, b) => b - a);
+      console.log("Button E sorted descending:", numbers);
+    }
+
+  </script>
+
+</body>
+</html>
